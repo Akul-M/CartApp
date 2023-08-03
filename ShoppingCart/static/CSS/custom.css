@@ -1,0 +1,101 @@
+.nav-item {
+    letter-spacing : .2em;
+    font-size : 16px;
+    text-transform : uppercase;
+    font-family: 'REM', sans-serif;
+}
+.dropdown-item{
+    letter-spacing : .2em;
+    font-size : 14px;
+    text-transform : uppercase;
+    font-family: 'REM', sans-serif;
+}
+
+body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Set the minimum height to at least 100% of the viewport height */
+    }
+
+.content {
+      flex: 1; /* Flex-grow property to allow the content to take available space */
+    }
+
+footer {
+      background-color: rgb(240, 240, 240);
+      padding: 18px 0px;
+      text-align: center;
+      margin-bottom:15px;
+
+    }
+
+.my_navbar{
+    background-color : rgb(240, 240, 240);
+}
+
+.my_row{
+    padding-top : 10px;
+    padding-bottom : 10px;
+}
+
+.my_row .mx_auto{
+    font-size : 15px;
+}
+
+.my_tittle{
+    font-size : 26px;
+    text-transform : uppercase;
+    letter-spacing : .1em;
+}
+
+.my_bottom_margin{
+    margin-bottom: 25px;
+}
+
+.cad-body{
+    font-size : 15px;
+    text-transform : uppercase;
+    letter-spacing : .1em;
+}
+
+.mx_auto{
+    color: #000;
+    font-size : 18px;
+    letter-spacing : .1em;
+}
+
+.my_des_tittle{
+    font-size : 14px;
+    text-transform : uppercase;
+    letter-spacing : .2em;
+}
+
+.custom_table{
+    min-width: 200px;
+    font-size:15px;
+    padding:20px;
+
+}
+
+.table_head{
+    font-weight:normal;
+    text-transform : uppercase;
+    letter-spacing : .2em;
+    background-color : rgb(240, 240, 240);
+
+
+}
+
+.cart_header{
+    text-transform : uppercase;
+    letter-spacing : .1em;
+    padding-bottom: 10px;
+}
+
+
+
+
+
+
+

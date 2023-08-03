@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+    {% if category %}
+        {{ category.description|truncatewords:155 }}
+    {% else %}
+        Welcome to Pro cart, where you can buy products like a Pro.
+    {% endif %}
+{% endblock %}
+{% block title %}
+    {% if category %}
+        {{ category.categoryName}} - Pro Cart
+    {% else %}
+        See our new products - Pro Cart
+    {% endif %}
+{% endblock %}
+{% block content %}
+    {% if category %}
+        <div>
+            <div class="row my_row">
+                <div class="mx_auto">
+                    <p><a class="btn btn-secondary" href="{% url 'CartApp:allCategories' %}">Our Products Collection</a></p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="mx_auto">
+    {% if category %}
+        <img class="my-img" width="100%" src="{{category.categoryImage.url}}" alt="category.categoryName">
+    </div><br>
+    <div>
+        <h1 class="text-center my_tittle">{{category.categoryName}}</h1>
+        <p class="text-justify text-center">{{category.description}}</p>
+    </div>
+    {% else %}
+    <div><img width="100%" src="{% static 'Img/banner.png' %}" alt="Products"></div><br>
+    <div>
+        <h1 class="text-center my_tittle">Welcome to our store</h1>
+        <p class="text-justify text-center mb-4 ">Welcome to Pro cart, where you can buy products like a Pro.</p>
+    </div>
+    {% endif %}
+<div class="container">
+    <div class="row mx_auto">
+        {% for p in products.object_list %}
+        <div class="my_bottom_margin col-9 col-sm-12 col-md-4 col-lg-4">
+            <div class="card text-center" style="min-width:18rem;">
+                <a href="{{p.get_url}}"><img class="card-img-top" src="{{p.productImage.url}}" alt="{{p.productName}}"></a>
+                <div class="card-body">
+                    <h4>{{p.productName}}</h4>
+                    <p>Rs. {{p.price}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="mx-auto pb-3">
+        {% if products.paginator.num_pages > 1 %}
+        <hr>
+        <div class="text-center">
+            {% for pg in products.paginator.page_range %}
+            <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.paginator.number == pg %} active {% endif %}">{{pg}}</a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'CSS/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css' %}">
+    <meta name="description" content="{% block metadescription %} {% endblock %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=REM:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5106c3b49c.js" crossorigin="anonymous"></script>
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            {% include 'Header.html' %}
+            {% include 'Navbar.html' %}
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+
+    {% include 'Footer.html' %}
+
+<script src="{% static 'Js/popper.min.js' %}"></script>
+<script src="{% static 'Js/bootstrap.min.js' %}"></script>
+</body>
+</html>
